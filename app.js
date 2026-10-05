@@ -130,12 +130,12 @@ function calcHomeOffer() {
 
 // ---- Shop page: refurbished inventory ----
 var SHOP = [
-  { name: 'iPhone 15 Pro', spec: '128GB · Unlocked · Batt 91%', price: 649, tag: 'Best value' },
-  { name: 'iPhone 15', spec: '128GB · Unlocked · Batt 89%', price: 499, tag: 'Popular' },
-  { name: 'iPhone 14 Pro', spec: '128GB · Unlocked · Batt 88%', price: 479, tag: null },
-  { name: 'iPhone 14', spec: '128GB · Unlocked · Batt 90%', price: 349, tag: null },
-  { name: 'iPhone 13 Pro', spec: '128GB · Unlocked · New battery', price: 329, tag: 'New battery' },
-  { name: 'iPhone 13', spec: '128GB · Unlocked · Batt 87%', price: 269, tag: 'Budget pick' }
+  { name: 'iPhone 15 Pro', spec: '128GB · Unlocked · Batt 91%', price: 649, tag: 'Best value', img: 'images/iphone.jpg' },
+  { name: 'iPhone 15', spec: '128GB · Unlocked · Batt 89%', price: 499, tag: 'Popular', img: 'images/iphone-side.webp' },
+  { name: 'iPhone 14 Pro', spec: '128GB · Unlocked · Batt 88%', price: 479, tag: null, img: 'images/iphone.jpg' },
+  { name: 'iPhone 14', spec: '128GB · Unlocked · Batt 90%', price: 349, tag: null, img: 'images/iphone-side.webp' },
+  { name: 'iPhone 13 Pro', spec: '128GB · Unlocked · New battery', price: 329, tag: 'New battery', img: 'images/iphone.jpg' },
+  { name: 'iPhone 13', spec: '128GB · Unlocked · Batt 87%', price: 269, tag: 'Budget pick', img: 'images/iphone-side.webp' }
 ];
 var grid = document.getElementById('shop-grid');
 if (grid) {
@@ -145,7 +145,7 @@ if (grid) {
     var sms = 'sms:+14244260760?&body=' + encodeURIComponent('Hi SPADRA! Is the ' + p.name + ' (' + p.spec + ') for $' + p.price + ' still available?');
     d.innerHTML =
       (p.tag ? '<span class="badge">' + p.tag + '</span>' : '') +
-      '<div class="ph">📱</div>' +
+      '<img src="' + p.img + '" alt="' + p.name + '">' +
       '<h3>' + p.name + '</h3>' +
       '<div class="spec">' + p.spec + '</div>' +
       '<div class="p">$' + p.price + '</div>' +
