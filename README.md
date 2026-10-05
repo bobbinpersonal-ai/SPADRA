@@ -1,6 +1,6 @@
-# SPADRA — iPhone Repair & Flips
+# SPADRA — iPhone Repair & Buy & Sell
 
-Static HTML site for the iPhone repair + buy/sell flipping store (Sacramento, CA).
+Static HTML site for the iPhone repair + buy/sell store (Sacramento, CA).
 
 ## Pages
 - `index.html` — home: services, how it works, popular repairs, FAQ
