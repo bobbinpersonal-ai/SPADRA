@@ -271,3 +271,6 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 40px; }
   .photo-duo{grid-template-columns:1fr}
   .photo-duo img{height:200px}
 }
+@media(max-width:720px){
+  .brand{font-size:14px;letter-spacing:2px}
+}
