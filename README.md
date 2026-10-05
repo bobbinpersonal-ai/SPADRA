@@ -22,3 +22,6 @@ Any static host works (Vercel, Netlify, Cloudflare Pages). No build step.
 
 ---
 _Previous project (p0k3r-moving, Next.js) is preserved on branch `backup/p0k3r-moving-original`._
+
+## Deploy
+Auto-deploys to spadrahouse.com via Vercel on every push to main.
