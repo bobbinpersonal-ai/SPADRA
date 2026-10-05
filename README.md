@@ -9,9 +9,8 @@ Static HTML site for the iPhone repair + buy/sell flipping store (Sacramento, CA
 - `shop.html` — refurbished iPhone inventory (rendered from `SHOP` array in `app.js`)
 - `styles.css`, `app.js` — shared styles and logic, no dependencies
 
-## Setup before launch
-Search the HTML/JS for `REPLACE WITH REAL NUMBER` and swap in the real business
-phone number (currently a `(555)` placeholder), and confirm `hello@spadrahouse.com`.
+## Contact
+Business line: **(424) 426-0760** — wired into all call/text buttons and SMS booking flows.
 
 ## Pricing data
 - Repair prices live in the HTML tables.

@@ -1,4 +1,13 @@
 /* SPADRA — app.js */
+// Transparent nav that locks in with a solid background on scroll
+var nav = document.querySelector('.nav');
+function onScroll() {
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
 // Footer year
 document.querySelectorAll('#yr').forEach(el => { el.textContent = new Date().getFullYear(); });
 
@@ -46,9 +55,8 @@ function calcOffer() {
   document.getElementById('quote-amount').textContent = '$' + offer;
   box.querySelector('p').textContent = 'Estimated cash offer · final quote confirmed in person after inspection';
   var condLabel = document.getElementById('s-cond').selectedOptions[0].textContent;
-  // REPLACE WITH REAL NUMBER
   document.getElementById('quote-text').href =
-    'sms:+15552345678?&body=' + encodeURIComponent('Hi SPADRA! Your tool estimated $' + offer + ' for my ' + MODELS[mi].name + ' (' + condLabel + '). Can you lock this in?');
+    'sms:+14244260760?&body=' + encodeURIComponent('Hi SPADRA! Your tool estimated $' + offer + ' for my ' + MODELS[mi].name + ' (' + condLabel + '). Can you lock this in?');
   box.classList.add('show');
   box.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
@@ -67,8 +75,7 @@ if (grid) {
   SHOP.forEach(function (p) {
     var d = document.createElement('div');
     d.className = 'phone';
-    // REPLACE WITH REAL NUMBER
-    var sms = 'sms:+15552345678?&body=' + encodeURIComponent('Hi SPADRA! Is the ' + p.name + ' (' + p.spec + ') for $' + p.price + ' still available?');
+    var sms = 'sms:+14244260760?&body=' + encodeURIComponent('Hi SPADRA! Is the ' + p.name + ' (' + p.spec + ') for $' + p.price + ' still available?');
     d.innerHTML =
       (p.tag ? '<span class="badge">' + p.tag + '</span>' : '') +
       '<div class="ph">📱</div>' +
@@ -91,7 +98,6 @@ if (repairForm) {
       'Model: ' + document.getElementById('r-model').value + '\n' +
       'Issue: ' + document.getElementById('r-issue').value + '\n' +
       'Notes: ' + (document.getElementById('r-notes').value || '—');
-    // REPLACE WITH REAL NUMBER
-    window.location.href = 'sms:+15552345678?&body=' + encodeURIComponent(msg);
+    window.location.href = 'sms:+14244260760?&body=' + encodeURIComponent(msg);
   });
 }
