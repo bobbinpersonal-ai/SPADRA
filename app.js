@@ -98,6 +98,36 @@ function calcOffer() {
   box.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+// ---- Homepage: iPhone-only instant offer ----
+var hModel = document.getElementById('h-model');
+if (hModel) {
+  CATEGORIES.iphone.items.forEach(function (it, i) {
+    var o = document.createElement('option');
+    o.value = i; o.textContent = it[0];
+    hModel.appendChild(o);
+  });
+}
+function calcHomeOffer() {
+  var box = document.getElementById('h-quote-box');
+  var mi = parseInt(hModel.value, 10);
+  var cond = parseFloat(document.getElementById('h-cond').value);
+  if (isNaN(mi)) {
+    box.classList.add('show');
+    document.getElementById('h-quote-amount').textContent = '—';
+    document.getElementById('h-quote-sub').textContent = 'Pick your model first.';
+    return;
+  }
+  var item = CATEGORIES.iphone.items[mi];
+  var offer = round5(item[1] * cond * BUY_FACTOR);
+  var condLabel = document.getElementById('h-cond').selectedOptions[0].textContent;
+  document.getElementById('h-quote-amount').textContent = '$' + offer;
+  document.getElementById('h-quote-sub').textContent = item[0] + ' · ' + condLabel + ' — confirmed when we meet';
+  document.getElementById('h-quote-text').href =
+    'sms:+14244260760?&body=' + encodeURIComponent('Hi SPADRA! Your site estimated $' + offer + ' for my ' + item[0] + ' (' + condLabel + '). I want to cash out.');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 // ---- Shop page: refurbished inventory ----
 var SHOP = [
   { name: 'iPhone 15 Pro', spec: '128GB · Unlocked · Batt 91%', price: 649, tag: 'Best value' },
