@@ -164,6 +164,7 @@ if (repairForm) {
       'Phone: ' + document.getElementById('r-phone').value + '\n' +
       'Model: ' + document.getElementById('r-model').value + '\n' +
       'Issue: ' + document.getElementById('r-issue').value + '\n' +
+      'Fix location: ' + (document.getElementById('r-loc').value || '—') + '\n' +
       'Notes: ' + (document.getElementById('r-notes').value || '—');
     window.location.href = 'sms:+14244260760?&body=' + encodeURIComponent(msg);
   });
